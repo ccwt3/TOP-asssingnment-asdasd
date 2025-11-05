@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+</head>
+<body>
+  <form action="/search" method="get">
+    <label for="username">Name: </label>
+    <input type="text" name="username" id="username">
+
+    <label for="mail">Email: </label>
+    <input type="email" name="mail" id="mail">
+
+    <button type="submit">Search</button>
+  </form>
+
+  <div>
+    <% if (results !== null) { %>
+      <% results.forEach(e => { %>
+        <p>Name: <%= e.firstName + ' ' + e.lastName %></p>
+        <p>email: <%= e.email %></p>
+        <p>age: <%= e.age %></p>
+        <p>bio: <%= e.bio %></p>
+      <% }) %>
+    <% } %>
+  </div>
+
+  <a href="/">Back home</a>
+</body>
+</html>
